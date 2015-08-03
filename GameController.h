@@ -18,6 +18,10 @@ private:
     cocos2d::Sprite * mSpriteControllerLeft;
     cocos2d::Sprite * mSpriteControllerRight;
     
+    cocos2d::Sprite * mTouchSpriteControllerUp;
+    cocos2d::Sprite * mTouchSpriteControllerLeft;
+    cocos2d::Sprite * mTouchSpriteControllerRight;
+    
     int _Up;
     int _Left;
     int _Right;
@@ -33,6 +37,9 @@ public:
 
     virtual bool init();
     CREATE_FUNC(GameController);
+    
+    bool isActiveKey(int key);
+    void flush();
     
     // callback
     typedef std::function<void( int key, bool active)> GameControllerCallBack;
